@@ -1,0 +1,12 @@
+﻿  main.cpp
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Camera.h(30,35): warning C4305: 'initialisation' : troncation de 'double' à 'float'
+  (compiler le fichier source 'main.cpp')
+  
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Shader.h(36,78): error C2664: 'void (GLuint,GLsizei,const GLchar *const *,const GLint *)' : impossible de convertir l'argument 4 de 'unsigned int' en 'const GLint *'
+  (compiler le fichier source 'main.cpp')
+      D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Shader.h(36,78):
+      La conversion d'un type intégral en un type pointeur nécessite un reinterpret_cast, un cast de style C ou un cast de style fonction entre parenthèses.
+  
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(66,28): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(66,23): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(66,18): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
