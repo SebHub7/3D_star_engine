@@ -6,26 +6,19 @@
 #include <iostream>
 #include "Camera.h"
 #include "Shader.h"
+#include "Mesh.h"
 
-const unsigned int WIDTH = 800;
-const unsigned int HEIGHT = 600;
+const unsigned int WINDOW_WIDTH = 800;
+const unsigned int WINDOW_HEIGHT = 600;
 
 Camera cam;
+Mesh m;
 Shader shader;
 
 GLuint vao = 0;
-GLuint vertex_buffer = 0;
-int vertex_count = 0;
-
-
-float vertices[] = {
-    -0.5, -0.5, -2,
-     0.5, -0.5, -2,
-     -0.5,  0.5, -2,
-     0.5,  0.5, -2,
-      0.5, -0.5, -2,
-     -0.5,  0.5, -2
-};
+GLuint vbo_vertices = 0;
+GLuint vbo_texture_coordinates = 0;
+GLuint vbo_normals = 0;
 
 
 
@@ -34,19 +27,17 @@ void init()
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
 
-    glViewport(0, 0, WIDTH, HEIGHT);
+    glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
 
-    glGenBuffers(1, &vertex_buffer);
-    glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), &vertices[0], GL_STATIC_DRAW);
+    glGenBuffers(1, &vbo_vertices);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo_vertices);
+    glBufferData(GL_ARRAY_BUFFER, m.getVerticesByteSize(), &m.vertices.front().x, GL_STATIC_DRAW);
    
-    glVertexAttribPointer(0, 3, GL_FLOAT,GL_FALSE, 0, 0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
     glEnableVertexAttribArray(0);
-
-    vertex_count = 6;
 
     shader.compileShader("vertex_shader.glsl", "fragment_shader.glsl");
 }
@@ -54,7 +45,7 @@ void init()
 void release()
 {
     glDeleteVertexArrays(1, &vao);
-    glDeleteBuffers(1, &vertex_buffer);
+    glDeleteBuffers(1, &vbo_vertices);
 
     glDeleteShader(shader.program);
 }
@@ -67,13 +58,14 @@ void draw()
     glBindVertexArray(vao);
     glUseProgram(shader.program);
 
+    glm::vec3 mesh_center = m.getObjectCenter();
     glm::mat4 view = cam.getViewMatrix();
-    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);
+    glm::mat4 projection = cam.getPerspectiveProjectionMatrix(WINDOW_WIDTH, WINDOW_HEIGHT);
     glm::mat4 vp_matrix = projection * view;
 
     glUniformMatrix4fv(glGetUniformLocation(shader.program, "vp"), 1, GL_FALSE, &vp_matrix[0][0]);
 
-    glDrawArrays(GL_TRIANGLES, 0, vertex_count);
+    glDrawArrays(GL_TRIANGLES, 0, m.vertices.size());
 }
 
 // resize window when resizing
@@ -88,6 +80,9 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 
 int main()
 {    
+    m = read_obj("cone.obj");
+    //cam.lookAt(m.getObjectCenter());
+
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);

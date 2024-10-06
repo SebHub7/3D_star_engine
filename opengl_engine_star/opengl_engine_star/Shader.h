@@ -23,7 +23,6 @@ struct Shader
             ss << file.rdbuf(); // reading data
             content = ss.str();
         }
-        std::cout << content << std::endl;
         return content;
     }
 
