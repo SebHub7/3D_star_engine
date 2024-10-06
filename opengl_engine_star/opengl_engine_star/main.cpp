@@ -15,12 +15,6 @@ Camera cam;
 Mesh m;
 Shader shader;
 
-GLuint vao = 0;
-GLuint vbo_vertices = 0;
-GLuint vbo_texture_coordinates = 0;
-GLuint vbo_normals = 0;
-
-
 
 void init()
 {
@@ -29,36 +23,23 @@ void init()
 
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
-    glGenVertexArrays(1, &vao);
-    glBindVertexArray(vao);
+    m = read_obj("cone.obj");
+    m.initBuffers();
 
-    glGenBuffers(1, &vbo_vertices);
-    glBindBuffer(GL_ARRAY_BUFFER, vbo_vertices);
-    glBufferData(GL_ARRAY_BUFFER, m.getVerticesByteSize(), &m.vertices.front().x, GL_STATIC_DRAW);
-   
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-    glEnableVertexAttribArray(0);
+    //cam.lookAt(m.getObjectCenter());
 
     shader.compileShader("vertex_shader.glsl", "fragment_shader.glsl");
 }
 
-void release()
-{
-    glDeleteVertexArrays(1, &vao);
-    glDeleteBuffers(1, &vbo_vertices);
-
-    glDeleteShader(shader.program);
-}
 
 void draw()
 {
     glClearColor(0.2, 0.2, 0.2, 1);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    glBindVertexArray(vao);
+    glBindVertexArray(m.vao);
     glUseProgram(shader.program);
 
-    glm::vec3 mesh_center = m.getObjectCenter();
     glm::mat4 view = cam.getViewMatrix();
     glm::mat4 projection = cam.getPerspectiveProjectionMatrix(WINDOW_WIDTH, WINDOW_HEIGHT);
     glm::mat4 vp_matrix = projection * view;
@@ -80,9 +61,6 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 
 int main()
 {    
-    m = read_obj("cone.obj");
-    //cam.lookAt(m.getObjectCenter());
-
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -121,7 +99,6 @@ int main()
         glfwPollEvents();
     }
    
-    release();
     glfwTerminate();
     return 0;
 }

@@ -2,19 +2,19 @@
 D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Camera.h(15,31): warning C4305: 'initialisation' : troncation de 'double' à 'const float'
   (compiler le fichier source 'main.cpp')
   
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(18,26): warning C4267: 'return' : conversion de 'size_t' en 'unsigned int', perte possible de données
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(63,26): warning C4267: 'return' : conversion de 'size_t' en 'unsigned int', perte possible de données
   (compiler le fichier source 'main.cpp')
   
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(23,37): warning C4267: 'return' : conversion de 'size_t' en 'unsigned int', perte possible de données
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(68,37): warning C4267: 'return' : conversion de 'size_t' en 'unsigned int', perte possible de données
   (compiler le fichier source 'main.cpp')
   
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(28,25): warning C4267: 'return' : conversion de 'size_t' en 'unsigned int', perte possible de données
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(73,25): warning C4267: 'return' : conversion de 'size_t' en 'unsigned int', perte possible de données
   (compiler le fichier source 'main.cpp')
   
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(55,28): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(55,23): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(55,18): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(68,50): warning C4267: 'argument' : conversion de 'size_t' en 'GLsizei', perte possible de données
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(37,28): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(37,23): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(37,18): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(49,50): warning C4267: 'argument' : conversion de 'size_t' en 'GLsizei', perte possible de données
 D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Shader.h(50,1): warning C4172: retour de l’adresse de la variable locale ou temporaire : vertex_program
 D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Shader.h(73,1): warning C4172: retour de l’adresse de la variable locale ou temporaire : fragment_program
   opengl_engine_star.vcxproj -> D:\Projets\3D_star_engine\opengl_engine_star\x64\Debug\opengl_engine_star.exe

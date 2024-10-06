@@ -10,8 +10,53 @@ struct Mesh
 	std::vector<glm::vec3> vertices;
 	std::vector<glm::vec2> texture_coordinates;
 	std::vector<glm::vec3> normals;
+	bool has_normals = false;
+	bool has_texture_coordinates = false;
+
+	GLuint vao;
+	GLuint vbo_vertices;
+	GLuint vbo_texture_coordinates;
+	GLuint vbo_normals;
 
 	Mesh(){}
+
+	~Mesh()
+	{
+		glDeleteVertexArrays(1, &vao);
+		glDeleteBuffers(1, &vbo_vertices);
+		glDeleteBuffers(1, &vbo_texture_coordinates);
+		glDeleteBuffers(1, &vbo_normals);
+	}
+
+	void initBuffers()
+	{
+		glGenVertexArrays(1, &vao);
+		glBindVertexArray(vao);
+
+		glGenBuffers(1, &vbo_vertices);
+		glBindBuffer(GL_ARRAY_BUFFER, vbo_vertices);
+		glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(glm::vec3), &vertices.front().x, GL_STATIC_DRAW);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+		glEnableVertexAttribArray(0);
+
+		if (has_texture_coordinates)
+		{
+			glGenBuffers(1, &vbo_texture_coordinates);
+			glBindBuffer(GL_ARRAY_BUFFER, vbo_texture_coordinates);
+			glBufferData(GL_ARRAY_BUFFER, texture_coordinates.size() * sizeof(glm::vec3), &texture_coordinates.front().x, GL_STATIC_DRAW);
+			glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+			glEnableVertexAttribArray(1);
+		}
+
+		if (has_normals)
+		{
+			glGenBuffers(1, &vbo_normals);
+			glBindBuffer(GL_ARRAY_BUFFER, vbo_normals);
+			glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(glm::vec3), &normals.front().x, GL_STATIC_DRAW);
+			glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, 0);
+			glEnableVertexAttribArray(2);
+		}
+	}
 
 	unsigned int getVerticesByteSize()
 	{
@@ -63,9 +108,6 @@ Mesh read_obj(std::string file_name)
 	std::string line;
 	std::ifstream file(file_name);
 
-	bool has_texture_coordinates = false;
-	bool has_normals = false;
-
 	if (file.is_open())
 	{
 		while (std::getline(file, line))
@@ -96,17 +138,17 @@ Mesh read_obj(std::string file_name)
 				unsigned int iv1, iv2, iv3, ivt1, ivt2, ivt3, ivn1, ivn2, ivn3;
 
 				if (texture_coordinates.size() == 0 && normals.size() == 0)
-					sscanf_s(line.c_str(), "f %i// %i// %i//", &iv1, &iv2, &iv3);
+					sscanf_s(line.c_str(), "f %i %i %i", &iv1, &iv2, &iv3);
 
 				else if (texture_coordinates.size() != 0 && normals.size() == 0)
 				{
-					sscanf_s(line.c_str(), "f %i/%i/ %i/%i/ %i/%i/", &iv1, &ivt1, &iv2, &ivt2, &iv3, &ivt3);
-					has_texture_coordinates = true;
+					sscanf_s(line.c_str(), "f %i/%i %i/%i %i/%i", &iv1, &ivt1, &iv2, &ivt2, &iv3, &ivt3);
+					m.has_texture_coordinates = true;
 				}
 				else if (texture_coordinates.size() == 0 && normals.size() != 0)
 				{
 					sscanf_s(line.c_str(), "f %i//%i %i//%i %i//%i", &iv1, &ivn1, &iv2, &ivn2, &iv3, &ivn3);
-					has_normals = true;
+					m.has_normals = true;
 				}
 				else if (texture_coordinates.size() != 0 && normals.size() != 0)
 				{
@@ -115,21 +157,21 @@ Mesh read_obj(std::string file_name)
 						&iv2, &ivt2, &ivn2,
 						&iv3, &ivt3, &ivn3
 					);
-					has_texture_coordinates = true;
-					has_normals = true;
+					m.has_texture_coordinates = true;
+					m.has_normals = true;
 				}
 
 				m.vertices.push_back(vertices[iv1-1]);
 				m.vertices.push_back(vertices[iv2-1]);
 				m.vertices.push_back(vertices[iv3-1]);
 
-				if (has_texture_coordinates)
+				if (m.has_texture_coordinates)
 				{
 					m.texture_coordinates.push_back(texture_coordinates[ivt1-1]);
 					m.texture_coordinates.push_back(texture_coordinates[ivt2-1]);
 					m.texture_coordinates.push_back(texture_coordinates[ivt3-1]);
 				}
-				if (has_normals)
+				if (m.has_normals)
 				{
 					m.normals.push_back(normals[ivn1 - 1]);
 					m.normals.push_back(normals[ivn2 - 1]);
@@ -139,7 +181,5 @@ Mesh read_obj(std::string file_name)
 		}
 		file.close();
 	}
-	std::cout << "Normals: " << has_normals << std::endl;
-
 	return m;
 }
