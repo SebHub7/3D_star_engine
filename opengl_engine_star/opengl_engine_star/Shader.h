@@ -7,11 +7,12 @@
 
 struct Shader
 {	
-    unsigned int program;
+    GLuint program;
 
-	Shader(){}
+	Shader() : program(0)
+    {}
 
-    const char* getFileContent(std::string file_name)
+    std::string getFileContent(std::string file_name)
     {
         std::ifstream file(file_name);
         std::string content;
@@ -23,17 +24,18 @@ struct Shader
             content = ss.str();
         }
         std::cout << content << std::endl;
-        return content.c_str();
+        return content;
     }
 
 	unsigned int& compileVertexShader(std::string file_name)
 	{
         unsigned int vertex_program;
 
-        const char * content = getFileContent(file_name);
+        std::string content_str = getFileContent(file_name);
+        const char * content = content_str.c_str();
 
         vertex_program = glCreateShader(GL_VERTEX_SHADER);
-        glShaderSource(vertex_program, 1, &content, std::strlen(content));
+        glShaderSource(vertex_program, 1, &content, NULL);
         glCompileShader(vertex_program);
 
         int  success;
@@ -53,7 +55,8 @@ struct Shader
     {
         unsigned int fragment_program;
 
-        const char* content = getFileContent(file_name);
+        std::string content_str = getFileContent(file_name);
+        const char* content = content_str.c_str();
 
         fragment_program = glCreateShader(GL_FRAGMENT_SHADER);
         glShaderSource(fragment_program, 1, &content, NULL);
@@ -66,7 +69,7 @@ struct Shader
         if (!success)
         {
             glGetShaderInfoLog(fragment_program, 512, NULL, infoLog);
-            std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
+            std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
         }
         return fragment_program;
     }

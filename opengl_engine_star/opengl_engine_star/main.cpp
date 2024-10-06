@@ -36,11 +36,9 @@ void init()
 
     glViewport(0, 0, WIDTH, HEIGHT);
 
-    // cree et configure un vertex array object: conserve la description des attributs de sommets
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
 
-    // cree et initialise le buffer stockant les positions des sommets
     glGenBuffers(1, &vertex_buffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), &vertices[0], GL_STATIC_DRAW);
@@ -72,7 +70,6 @@ void draw()
     glm::mat4 view = cam.getViewMatrix();
     glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);
     glm::mat4 vp_matrix = projection * view;
-    glm::vec3 test = glm::vec3(1, 0, 0);
 
     glUniformMatrix4fv(glGetUniformLocation(shader.program, "vp"), 1, GL_FALSE, &vp_matrix[0][0]);
 
