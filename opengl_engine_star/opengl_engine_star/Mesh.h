@@ -10,6 +10,9 @@ struct Mesh
 	std::vector<glm::vec3> vertices;
 	std::vector<glm::vec2> texture_coordinates;
 	std::vector<glm::vec3> normals;
+
+	std::vector<unsigned int> indices_vertices;
+
 	bool has_normals = false;
 	bool has_texture_coordinates = false;
 
@@ -43,7 +46,7 @@ struct Mesh
 		{
 			glGenBuffers(1, &vbo_texture_coordinates);
 			glBindBuffer(GL_ARRAY_BUFFER, vbo_texture_coordinates);
-			glBufferData(GL_ARRAY_BUFFER, texture_coordinates.size() * sizeof(glm::vec3), &texture_coordinates.front().x, GL_STATIC_DRAW);
+			glBufferData(GL_ARRAY_BUFFER, texture_coordinates.size() * sizeof(glm::vec2), &texture_coordinates.front().x, GL_STATIC_DRAW);
 			glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 			glEnableVertexAttribArray(1);
 		}
@@ -121,64 +124,79 @@ Mesh read_obj(std::string file_name)
 					sscanf_s(line.c_str(), "v %f %f %f", &x, &y, &z);
 					vertices.push_back(glm::vec3(x, y, z));
 				}
-				else if (line[1] == 'n')
-				{
-					sscanf_s(line.c_str(), "vn %f %f %f", &x, &y, &z);
-					normals.push_back(glm::vec3(x, y, z));
-				}
 				else if (line[1] == 't')
 				{
 					sscanf_s(line.c_str(), "vt %f %f", &x, &y);
 					texture_coordinates.push_back(glm::vec2(x, y));
 				}
+				else if (line[1] == 'n')
+				{
+					sscanf_s(line.c_str(), "vn %f %f %f", &x, &y, &z);
+					normals.push_back(glm::vec3(x, y, z));
+				}
 			}
 
 			else if(line[0] == 'f')
 			{
-				unsigned int iv1, iv2, iv3, ivt1, ivt2, ivt3, ivn1, ivn2, ivn3;
+				int more_data;
+				const char* string = line.c_str();
+				std::vector<int> indices_v;
+				std::vector<int> indices_vt;
+				std::vector<int> indices_vn;
 
-				if (texture_coordinates.size() == 0 && normals.size() == 0)
-					sscanf_s(line.c_str(), "f %i %i %i", &iv1, &iv2, &iv3);
+				for (string = string + 1;; string += more_data)
+				{
+					more_data = 0;
+					indices_v.push_back(0); // indices non valide
+					indices_vt.push_back(0);
+					indices_vn.push_back(0);
 
-				else if (texture_coordinates.size() != 0 && normals.size() == 0)
-				{
-					sscanf_s(line.c_str(), "f %i/%i %i/%i %i/%i", &iv1, &ivt1, &iv2, &ivt2, &iv3, &ivt3);
-					m.has_texture_coordinates = true;
-				}
-				else if (texture_coordinates.size() == 0 && normals.size() != 0)
-				{
-					sscanf_s(line.c_str(), "f %i//%i %i//%i %i//%i", &iv1, &ivn1, &iv2, &ivn2, &iv3, &ivn3);
-					m.has_normals = true;
-				}
-				else if (texture_coordinates.size() != 0 && normals.size() != 0)
-				{
-					sscanf_s(line.c_str(), "f %i/%i/%i %i/%i/%i %i/%i/%i", 
-						&iv1, &ivt1, &ivn1, 
-						&iv2, &ivt2, &ivn2,
-						&iv3, &ivt3, &ivn3
-					);
-					m.has_texture_coordinates = true;
-					m.has_normals = true;
+					if (sscanf_s(string, " %d/%d/%d %n", &indices_v.back(), &indices_vt.back(), &indices_vn.back(), &more_data) == 3)
+						continue;
+					else if (sscanf_s(string, " %d//%d %n", &indices_v.back(), &indices_vn.back(), &more_data) == 2)
+						continue;
+					else if (sscanf_s(string, " %d/%d %n", &indices_v.back(), &indices_vt.back(), &more_data) == 2)
+						continue;
+					else if (sscanf_s(string, " %d% n", &indices_v.back(), &more_data) == 1)
+						continue;
+					else if (more_data == 0)
+					{
+						indices_v.pop_back();
+						indices_vt.pop_back();
+						indices_vn.pop_back();
+						break;
+					}
 				}
 
-				m.vertices.push_back(vertices[iv1-1]);
-				m.vertices.push_back(vertices[iv2-1]);
-				m.vertices.push_back(vertices[iv3-1]);
+				// création des sommets, textures_coord et normales des triangles
+				for (int i = 0; i < indices_v.size() - 2; i++)
+				{
+					m.vertices.push_back(vertices[indices_v[0] -1]);
+					m.vertices.push_back(vertices[indices_v[i+1] -1]);
+					m.vertices.push_back(vertices[indices_v[i+2] -1]);
 
-				if (m.has_texture_coordinates)
-				{
-					m.texture_coordinates.push_back(texture_coordinates[ivt1-1]);
-					m.texture_coordinates.push_back(texture_coordinates[ivt2-1]);
-					m.texture_coordinates.push_back(texture_coordinates[ivt3-1]);
-				}
-				if (m.has_normals)
-				{
-					m.normals.push_back(normals[ivn1 - 1]);
-					m.normals.push_back(normals[ivn2 - 1]);
-					m.normals.push_back(normals[ivn3 - 1]);
+					if (indices_vt.size() > 0)
+					{
+						m.texture_coordinates.push_back(texture_coordinates[indices_vt[0] - 1]);
+						m.texture_coordinates.push_back(texture_coordinates[indices_vt[i+1] - 1]);
+						m.texture_coordinates.push_back(texture_coordinates[indices_vt[i+2] - 1]);
+					}
+
+					if (indices_vn.size() > 0)
+					{
+						m.normals.push_back(normals[indices_vn[0] - 1]);
+						m.normals.push_back(normals[indices_vn[i+1] - 1]);
+						m.normals.push_back(normals[indices_vn[i+2] - 1]);
+					}
 				}
 			}
 		}
+		if (texture_coordinates.size() > 0)
+			m.has_texture_coordinates = true;
+
+		if (normals.size() > 0)
+			m.has_normals = true;
+
 		file.close();
 	}
 	return m;

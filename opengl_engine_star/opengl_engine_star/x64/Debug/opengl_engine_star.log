@@ -2,19 +2,36 @@
 D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Camera.h(15,31): warning C4305: 'initialisation' : troncation de 'double' à 'const float'
   (compiler le fichier source 'main.cpp')
   
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(63,26): warning C4267: 'return' : conversion de 'size_t' en 'unsigned int', perte possible de données
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Renderer.h(28,26): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
   (compiler le fichier source 'main.cpp')
   
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(68,37): warning C4267: 'return' : conversion de 'size_t' en 'unsigned int', perte possible de données
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Renderer.h(28,21): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
   (compiler le fichier source 'main.cpp')
   
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(73,25): warning C4267: 'return' : conversion de 'size_t' en 'unsigned int', perte possible de données
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Renderer.h(28,16): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
   (compiler le fichier source 'main.cpp')
   
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(37,28): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(37,23): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(37,18): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\main.cpp(49,50): warning C4267: 'argument' : conversion de 'size_t' en 'GLsizei', perte possible de données
-D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Shader.h(50,1): warning C4172: retour de l’adresse de la variable locale ou temporaire : vertex_program
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(66,26): warning C4267: 'return' : conversion de 'size_t' en 'unsigned int', perte possible de données
+  (compiler le fichier source 'main.cpp')
+  
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(71,37): warning C4267: 'return' : conversion de 'size_t' en 'unsigned int', perte possible de données
+  (compiler le fichier source 'main.cpp')
+  
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(76,25): warning C4267: 'return' : conversion de 'size_t' en 'unsigned int', perte possible de données
+  (compiler le fichier source 'main.cpp')
+  
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(160,32): warning C4476: 'sscanf_s' : caractère de champ de type ' ' inconnu dans le spécificateur de format
+  (compiler le fichier source 'main.cpp')
+  
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(160,61): warning C4474: 'sscanf_s' : trop d'arguments passés pour la chaîne de format
+  (compiler le fichier source 'main.cpp')
+      D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Mesh.h(160,61):
+      les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
+  
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Window.h(64,38): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+  (compiler le fichier source 'main.cpp')
+  
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Window.h(56,1): warning C4715: 'Window::initWindow' : les chemins de contrôle ne retournent pas tous une valeur
 D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Shader.h(73,1): warning C4172: retour de l’adresse de la variable locale ou temporaire : fragment_program
+D:\Projets\3D_star_engine\opengl_engine_star\opengl_engine_star\Shader.h(50,1): warning C4172: retour de l’adresse de la variable locale ou temporaire : vertex_program
   opengl_engine_star.vcxproj -> D:\Projets\3D_star_engine\opengl_engine_star\x64\Debug\opengl_engine_star.exe
