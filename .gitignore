@@ -1,6 +1,6 @@
 glad
 glfw-3.4.bin.WIN64
 glm-0.9.8.5
-opengl_engine_star/.vs
-opengl_engine_star/x64
-opengl_engine_star/opengl_engine_star/x64
+opengl_engine_star/.vs/
+opengl_engine_star/x64/
+opengl_engine_star/opengl_engine_star/x64/
