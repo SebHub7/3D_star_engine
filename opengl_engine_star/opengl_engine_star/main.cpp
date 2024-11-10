@@ -10,12 +10,12 @@ int main()
     Camera cam;
     Mesh m;
 
-    //m = read_obj("plant/indoor plant_02.obj");
-    m = read_obj("buoy.obj");
+    m = read_obj("plant/indoor plant_02.obj");
+    //m = read_obj("buoy.obj");
+
     m.initBuffers();
 
     w.run(r, cam, m);
 
     return 0;
 }
-

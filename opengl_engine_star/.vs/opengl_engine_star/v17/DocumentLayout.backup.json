@@ -3,24 +3,44 @@
   "WorkspaceRootPath": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Material.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\Material.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{388F2FCD-785F-4CB2-9F81-55491991BDAE}|opengl_engine_star\\opengl_engine_star.vcxproj|solutionrelative:opengl_engine_star\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,20 +50,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\main.cpp",
               "RelativeDocumentMoniker": "opengl_engine_star\\main.cpp",
               "ToolTip": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\main.cpp",
               "RelativeToolTip": "opengl_engine_star\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-04T14:51:53.093Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Material.h",
+              "DocumentMoniker": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Material.h",
+              "RelativeDocumentMoniker": "opengl_engine_star\\Material.h",
+              "ToolTip": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Material.h",
+              "RelativeToolTip": "opengl_engine_star\\Material.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-10T22:41:55.538Z",
               "EditorCaption": ""
             },
             {
@@ -60,13 +93,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Camera.h",
+              "DocumentMoniker": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Camera.h",
+              "RelativeDocumentMoniker": "opengl_engine_star\\Camera.h",
+              "ToolTip": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Camera.h",
+              "RelativeToolTip": "opengl_engine_star\\Camera.h",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-10T18:34:46.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Renderer.h",
               "DocumentMoniker": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Renderer.h",
               "RelativeDocumentMoniker": "opengl_engine_star\\Renderer.h",
               "ToolTip": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Renderer.h",
               "RelativeToolTip": "opengl_engine_star\\Renderer.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-12T17:30:06.651Z",
               "EditorCaption": ""
@@ -74,40 +120,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Renderer.cpp",
+              "DocumentMoniker": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Renderer.cpp",
+              "RelativeDocumentMoniker": "opengl_engine_star\\Renderer.cpp",
+              "ToolTip": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Renderer.cpp",
+              "RelativeToolTip": "opengl_engine_star\\Renderer.cpp",
+              "ViewState": "AgIAAAQAAAAAAAAAAADwvw4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-10T22:46:27.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Window.h",
               "DocumentMoniker": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Window.h",
               "RelativeDocumentMoniker": "opengl_engine_star\\Window.h",
               "ToolTip": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Window.h",
               "RelativeToolTip": "opengl_engine_star\\Window.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-12T17:19:54.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "Window.cpp",
+              "DocumentMoniker": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Window.cpp",
+              "RelativeDocumentMoniker": "opengl_engine_star\\Window.cpp",
+              "ToolTip": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Window.cpp",
+              "RelativeToolTip": "opengl_engine_star\\Window.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-10T22:47:54.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Shader.h",
               "DocumentMoniker": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Shader.h",
               "RelativeDocumentMoniker": "opengl_engine_star\\Shader.h",
               "ToolTip": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Shader.h",
               "RelativeToolTip": "opengl_engine_star\\Shader.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-06T17:27:27.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Mesh.h",
               "DocumentMoniker": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Mesh.h",
               "RelativeDocumentMoniker": "opengl_engine_star\\Mesh.h",
               "ToolTip": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Mesh.h",
               "RelativeToolTip": "opengl_engine_star\\Mesh.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-06T09:47:52.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Mesh.cpp",
+              "DocumentMoniker": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Mesh.cpp",
+              "RelativeDocumentMoniker": "opengl_engine_star\\Mesh.cpp",
+              "ToolTip": "D:\\Projets\\3D_star_engine\\opengl_engine_star\\opengl_engine_star\\Mesh.cpp",
+              "RelativeToolTip": "opengl_engine_star\\Mesh.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-10T22:29:16.719Z",
               "EditorCaption": ""
             }
           ]
